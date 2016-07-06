@@ -151,7 +151,7 @@ function createAsarOpts (opts) {
   let asarOptions
   if (opts.asar === true) {
     asarOptions = {}
-  } else if (opts.asar === false) {
+  } else if (opts.asar === false || opts.asar === undefined) {
     return false
   } else if (typeof opts.asar === 'object') {
     asarOptions = opts.asar

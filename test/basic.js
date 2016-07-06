@@ -510,8 +510,27 @@ function createDisableSymlinkDereferencingTest (opts) {
   }
 }
 
+test('asar argument test: asar is not set', function (t) {
+  var opts = {}
+
+  var asarOpts = common.createAsarOpts(opts)
+  t.false(asarOpts, 'createAsarOpts returns false')
+  t.end()
+})
+
+test('asar argument test: asar is true', function (t) {
+  var opts = {
+    asar: true
+  }
+
+  var asarOpts = common.createAsarOpts(opts)
+  t.same(asarOpts, {unpack: undefined, unpackDir: undefined})
+  t.end()
+})
+
 test('asar argument test: asar-unpack still works albeit deprecated', function (t) {
   var opts = {
+    asar: true,
     'asar-unpack': 'deprecated'
   }
 
@@ -535,6 +554,7 @@ test('asar argument test: asar.unpack overwrites asar-unpack', function (t) {
 
 test('asar argument test: asar-unpack-dir still works albeit deprecated', function (t) {
   var opts = {
+    asar: true,
     'asar-unpack-dir': 'deprecated'
   }
 

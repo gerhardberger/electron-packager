@@ -131,6 +131,12 @@ but are not limited to:
 - `strictSSL` (*Boolean* - default: `true`): Whether SSL certificates are required to be valid when
   downloading Electron.
 
+##### `electron-template`
+
+*String*
+
+Specify a path for a custom electron build, e.g. `./electron/out/D` for a custom built Debug version.
+
 ##### `icon`
 
 *String*

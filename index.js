@@ -127,7 +127,11 @@ function createSeries (opts, archs, platforms) {
               fs.mkdirs(buildDir, cb)
             },
             function (cb) {
-              extract(zipPath, {dir: buildDir}, cb)
+              if (opts['electron-template']) {
+                fs.copy(opts['electron-template'], buildDir, cb)
+              } else {
+                extract(zipPath, {dir: buildDir}, cb)
+              }
             },
             function (cb) {
               if (!opts.afterExtract || !Array.isArray(opts.afterExtract)) {

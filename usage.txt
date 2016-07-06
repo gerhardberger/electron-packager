@@ -41,6 +41,8 @@ download           a list of sub-options to pass to electron-download. They are 
                    - mirror: alternate URL to download Electron zips
                    - strictSSL: whether SSL certs are required to be valid when downloading
                      Electron. Defaults to true, use --download.strictSSL=false to disable checks.
+electron-template  specify a path for a custom electron build
+                   (e.g., `./electron/out/D` for a custom built Debug version)
 icon               the icon file to use as the icon for the app. Note: Format depends on platform.
 ignore             do not copy files into app whose filenames regex .match this string
 out                the dir to put the app into at the end. defaults to current working dir
